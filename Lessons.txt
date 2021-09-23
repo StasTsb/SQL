@@ -43,4 +43,25 @@ FROM tablesname
 
 ORDER BY используется для сортировки возвращаемой информации по указанной вами колонки:
 SELECT * FROM tablesname
-ORDER BY tablesname
+ORDER BY columname;
+
+Можно несколько колонок, тогда через запятую:
+columname, columname_2;
+
+Сортировка столбцов будет по порядку, сначала первый и тд. 
+
+WHERE выполнение только тех записей, которые соответствуют заданному критерию:
+SELECT columname
+FROM tablesname
+WHERE condition;
+
+Логические операторы WHERE:
+=   равно
+!=  не равно
+>   больше чем
+<   меньше чем
+>=   больше, либо равно
+<=   меньше, либо равно
+BETWEEN между включенного диапазона:
+WHERE columname BETWEEN 
+value AND value_2;

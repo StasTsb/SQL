@@ -65,3 +65,19 @@ WHERE condition;
 BETWEEN между включенного диапазона:
 WHERE columname BETWEEN 
 value AND value_2;
+
+AND 
+выбрать строки, которые удовлетворяют всем заданным условиям
+SELECT columname FROM tablesname
+WHERE columname >= 30 AND columname <=40;
+
+OR
+выбрать строки, которые удовлетворяют по меньшей мере одному из заданных условий
+SELECT columname FROM tablesname
+WHERE columname = 'result' OR columname = 'result2';
+
+КОМБО AND и OR =коньюктивный оператор 
+
+IN
+
+NOT

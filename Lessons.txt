@@ -1,3 +1,4 @@
+                                                                                                                                     1.ВВЕДЕНИЕ
 SQL не чувствителен к регистру (SelEcT)
 
 SHOW DATABASES отображение баз данных которые управляются сервером 
@@ -9,6 +10,7 @@ SHOW COLUMNS отображает информацию и столбцах в з
 FROM из какой таблицы:
 SHOW COLUMNS from tablesname
 
+                                                                                                                                     2. ВЫРАЖЕНИЯ
 SELECT выбор столбца из таблицы:
 SELECT columname from tablesname
 
@@ -19,7 +21,7 @@ SELECT 02_columname from tablesname;
 Можно через запятую:
 SELECT columname, secondcolumname
 FROM tablesname
-
+                                                                                                                                     3. ВЫБОР НЕСКОЛЬКИХ СТОБЦОВ
 Выбор всех столбцов:
 SELECT * FROM tablesname
 
@@ -79,5 +81,16 @@ WHERE columname = 'result' OR columname = 'result2';
 КОМБО AND и OR =коньюктивный оператор 
 
 IN
+для сравнения столбца больше чем с одним значением
+как и OR только можно в строку
 
-NOT
+SELECT * FROM tablesname
+WHERE value IN ("Jack", "Johny", "Dep");
+
+NOT IN
+исключаем список определенных значений из результата
+
+SELECT * FROM tablesname
+WHERE value NOT IN ("Jack", "Johny", "Dep");
+вышеуказанных парней уже не выдаст
+

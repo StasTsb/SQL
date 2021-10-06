@@ -153,5 +153,33 @@ SELECT SUM (Salary) FROM tablesname
 
                                                                                                                                      12. ПОДЗАПРОСЫ
 
+Подзапросы в скобках, без точки с запятой
+SELECT columname FROM tablesname
+WHERE salary > (SELECT columname AVG (salary) FROM
+tablesname)
+ORDER BY salary DESC;
+
+AVG среднее значение
+DESC сортировка в порядке убывания
+ASC в порядке возрастания
+
+                                                                                                                                     12. LIKE и MIN
+
+SELECT columname
+FROM tablesname
+WHERE columname
+LIKE voobrazi;
+
+также можно LIKE "A%";
+или "%S"
+
+Функция MIN используется для возврата минимального значени
+к примеру, минимальная ЗП среди работников
+SELECT MIN (salary) AS salary FROM tablesnme
+
+еще раз AS присвоение названия табл.
+
+                                                                                                                                     12. JOIN, ТАБЛИЧНЫЕ ОПЕРАЦИИ
+
 
 

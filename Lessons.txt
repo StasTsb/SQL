@@ -185,6 +185,11 @@ SELECT MIN (salary) AS salary FROM tablesnme
 более таблиц. Соединение таблиц создает временную таблицу, 
 отображающую информацию из обьединенных таблиц.
 
+Для того что бы соединить две таблицы, их необходимо указать в списке
+через запятую в выражении FROM.
 
+SELECT tablesname.columname(ID), tablesname2.columname2
+FROM tablesname, columname
+WHERE tablesnamecolumname(ID)
 
 

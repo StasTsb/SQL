@@ -130,7 +130,6 @@ FROM tablesname;
 получим columname1, columname2 и salary c прибавленной выше зп.
 Также можно делить, умножать, вычитать, а ежели взять в скобки, будет приоритет.
 
-
 11. ФУНКЦИИ
 
 UPPER конвертирует все буквы в заглавные 
@@ -165,7 +164,7 @@ AVG среднее значение
 DESC сортировка в порядке убывания
 ASC в порядке возрастания
 
-12. LIKE и MIN
+13. LIKE и MIN
 
 SELECT columname
 FROM tablesname
@@ -181,8 +180,10 @@ SELECT MIN (salary) AS salary FROM tablesnme
 
 еще раз AS присвоение названия табл.
 
-12. JOIN, ТАБЛИЧНЫЕ ОПЕРАЦИИ
-
+14. JOIN, ТАБЛИЧНЫЕ ОПЕРАЦИИ
+============================
+14.1 Соединение таблиц
+----------------------------
 В SQL соединение таблиц означает комбинацию данных из двух и 
 более таблиц. Соединение таблиц создает временную таблицу, 
 отображающую информацию из обьединенных таблиц.
@@ -190,8 +191,42 @@ SELECT MIN (salary) AS salary FROM tablesnme
 Для того что бы соединить две таблицы, их необходимо указать в списке
 через запятую в выражении FROM.
 
-SELECT tablesname.columname(ID), tablesname2.columname2
-FROM tablesname, columname
-WHERE tablesnamecolumname(ID)
+SELECT customers.ID, customers.Name,
+orders.Name, orders.Amount
+FROM customers, orders
+WHERE customers.ID = orders.Customer_ID
+ORDER BY customers.ID;
+
+* каждая таблица содержит ст. ID и Name, так что для выбора правильного
+ID и Name использубтся полностью квалифицированные имена.
+
+14.2 Типы обьединений
+----------------------------
+Пользовательские Имена
+Можно сократить выражение объединения, с помощью установки таблице
+"прозвища"
+
+SELECT ct.ID, ct.Name, ord.Name, ord.Amount
+FROM customers AS ct, orders AS ord
+WHERE ct.ID=ord.Customer_ID
+ORDER BY ct.ID;
+
+Типы обьединений
+-INNER JOIN (внутреннее обьединение) экв. JOIN. Оно возвращает строки, 
+если они совпадабт в таблицах. (Возвр. только совпадающие записи).
+-LEFT JOIN (возвращает все строки из левой таблицы, даже есл. нет соотв.
+в правой таблице).
+-RIGHT JOIN
+
+^INNER
+SELECT column_name(s)
+FROM table1 INNER JOIN table2
+ON table1.column_name=table2.column_name;
+
+ON указывает на условие внутреннего объединения
+
+^LEFT
+
+
 
 

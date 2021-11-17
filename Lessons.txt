@@ -257,7 +257,14 @@ SELECT column_name FROM table1
 UNION
 SELECT column_name FROM table2;
 
+(Если столбцы не совпадают в точности по все запросам, то можно использовать
+значение NULL:
 
+SELECT FirstName, LastName, Company 
+FROM businessContacts
+UNION
+SELECT FirstName, LastName, NULL FROM
+otherContacts;
 
 
 

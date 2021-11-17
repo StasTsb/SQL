@@ -216,16 +216,49 @@ ORDER BY ct.ID;
 если они совпадабт в таблицах. (Возвр. только совпадающие записи).
 -LEFT JOIN (возвращает все строки из левой таблицы, даже есл. нет соотв.
 в правой таблице).
--RIGHT JOIN
+-RIGHT JOIN (возвращает все строки из правой таблицы, даже если нет 
+соответсвий в левой таблице)
 
-^INNER
+Базовый синтаксис:
+
++INNER
 SELECT column_name(s)
 FROM table1 INNER JOIN table2
 ON table1.column_name=table2.column_name;
+(ON указывает на условие внутреннего объединения)
 
-ON указывает на условие внутреннего объединения
++LEFT
+SELECT table1.column1, table2.column2
+FROM table1 LEFT OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+(если совпадение ненайдено для конкретной строки, то будет возвращено 
+значение NULL)
 
-^LEFT
++RIGHT
+SELECT table1.column1, table2.column2
+FROM table1 RIGHT OUTER JOIN table2
+ON table.cilumn_name = table2.column_name;
+(OUTER является опциональным и может быть опущено)
+
+14.3 UNION
+----------------------------
+- комбинирует несколько наборов данных в один набор, и убирает
+любые существующие дубликаты
+UNION ALL (быстрее чем UNION)
+- комбинирует несколько наборов данных в один набор, но не убирает 
+дублирующиеся строки
+
+Оператор UNION используется для комбинирования наборов результатов
+двух и более выражений SELECT. Все выражения SELECT внутри UNION
+должны иметь одинаковое количество столбцов, столбцы в свою очередь
+должны иметь одинаковые типы данных и идти в одинаковом порядке.
+
+SELECT column_name FROM table1
+UNION
+SELECT column_name FROM table2;
+
+
+
 
 
 

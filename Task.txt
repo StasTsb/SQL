@@ -1,9 +1,9 @@
-Подключится к 
-Host 159.69.151.133
-Port 5056
-User user_22_x
-Pass 123
-Table qa_users
+  Подключится к 
+  Host 159.69.151.133
+  Port 5056
+  User user_22_x
+  Pass 123
+  Table qa_users
 
  1. Вывести все поля и все строки.                                 |    select * from students;
  2. Вывести всех студентов в таблице                               |    

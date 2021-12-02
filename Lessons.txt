@@ -1,4 +1,4 @@
-                                                                                                                                     1.ВВЕДЕНИЕ
+1.ВВЕДЕНИЕ
 
 SHOW DATABASES отображение баз данных которые управляются сервером 
 ------------------------------------------------------------------------------------------------
@@ -9,11 +9,13 @@ SHOW COLUMNS отображает информацию и столбцах в з
 FROM из какой таблицы:
 SHOW COLUMNS from tablesname
 
-                                                                                                                                     2. ВЫРАЖЕНИЯ SELECT
+2. ВЫРАЖЕНИЯ SELECT
+
 SELECT выбор столбца из таблицы:
 SELECT columname from tablesname
 
-                                                                                                                                     3. СИНТАКСИС
+3. СИНТАКСИС
+
 Множество запросов, точка с запятой:
 SELECT 01_columname from tablesname;
 SELECT 02_columname from tablesname;
@@ -24,12 +26,12 @@ FROM tablesname
 ------------------------------------------------------------------------------------------------
 SQL не чувствителен к регистру (SelEcT)
 
-                                                                                                                                     4. ВЫБОР НЕСКОЛЬКИХ СТОБЦОВ
+4. ВЫБОР НЕСКОЛЬКИХ СТОБЦОВ
 
 Выбор всех столбцов:
 SELECT * FROM tablesname
 
-                                                                                                                                     5. DISTINCT и LIMIT
+5. DISTINCT и LIMIT
 
 Для устранения всех повторных записей и возврата только уникальных- DISTINCT, используется в сочетании с SELECT:
 SELECT DISTINCT columname
@@ -44,7 +46,7 @@ LIMIT 100
 OFFSET 3 LIMIT 4;
 Результат: 4, 5, 6, 7
 
-                                                                                                                                     6. СОРТИРОВКА ДАННЫХ
+6. СОРТИРОВКА ДАННЫХ
 
 После SELECT можно указывать сразу название таблицы и имя столбца, разделив их при этом точкой:
 SELECT tablesname. columname 
@@ -60,7 +62,7 @@ columname, columname_2;
 
 Сортировка столбцов будет по порядку, сначала первый и тд. 
 
-                                                                                                                                     7. ВЫРАЖЕНИЕ WHERE
+7. ВЫРАЖЕНИЕ WHERE
 
 WHERE выполнение только тех записей, которые соответствуют заданному критерию:
 SELECT columname
@@ -78,7 +80,7 @@ BETWEEN между включенного диапазона:
 WHERE columname BETWEEN 
 value AND value_2;
 
-                                                                                                                                     8. ФИЛЬТРАЦИЯ С AND, OR
+8. ФИЛЬТРАЦИЯ С AND, OR
 
 AND 
 выбрать строки, которые удовлетворяют всем заданным условиям
@@ -92,7 +94,7 @@ WHERE columname = 'result' OR columname = 'result2';
 ------------------------------------------------------------------------------------------------
 КОМБО AND и OR =коньюктивный оператор 
 
-                                                                                                                                     9. ВЫРАЖЕНИЯ IN, NOT IN
+9. ВЫРАЖЕНИЯ IN, NOT IN
 
 IN
 для сравнения столбца больше чем с одним значением
@@ -108,7 +110,7 @@ SELECT * FROM tablesname
 WHERE value NOT IN ("Jack", "Johny", "Dep");
 вышеуказанных парней уже не выдаст
 
-                                                                                                                                     10. ПОЛЬЗОВАТЕЛЬСКИЕ СТОЛБЦЫ
+10. ПОЛЬЗОВАТЕЛЬСКИЕ СТОЛБЦЫ
 
 CONCAT - конкатенация двух и более значений
 SELECT CONCAT (columname1, columname2) FROM tablesname;
@@ -128,8 +130,7 @@ FROM tablesname;
 получим columname1, columname2 и salary c прибавленной выше зп.
 Также можно делить, умножать, вычитать, а ежели взять в скобки, будет приоритет.
 
-
-                                                                                                                                     11. ФУНКЦИИ
+11. ФУНКЦИИ
 
 UPPER конвертирует все буквы в заглавные 
 LOWER в мелкие
@@ -151,7 +152,7 @@ SUM используется для подсчета суммы значений
 SELECT SUM (Salary) FROM tablesname
 резалт общая сумма всех работяг
 
-                                                                                                                                     12. ПОДЗАПРОСЫ
+12. ПОДЗАПРОСЫ
 
 Подзапросы в скобках, без точки с запятой
 SELECT columname FROM tablesname
@@ -163,7 +164,7 @@ AVG среднее значение
 DESC сортировка в порядке убывания
 ASC в порядке возрастания
 
-                                                                                                                                     12. LIKE и MIN
+13. LIKE и MIN
 
 SELECT columname
 FROM tablesname
@@ -179,8 +180,10 @@ SELECT MIN (salary) AS salary FROM tablesnme
 
 еще раз AS присвоение названия табл.
 
-                                                                                                                                     12. JOIN, ТАБЛИЧНЫЕ ОПЕРАЦИИ
-
+14. JOIN, ТАБЛИЧНЫЕ ОПЕРАЦИИ
+============================
+14.1 Соединение таблиц
+----------------------------
 В SQL соединение таблиц означает комбинацию данных из двух и 
 более таблиц. Соединение таблиц создает временную таблицу, 
 отображающую информацию из обьединенных таблиц.
@@ -188,8 +191,82 @@ SELECT MIN (salary) AS salary FROM tablesnme
 Для того что бы соединить две таблицы, их необходимо указать в списке
 через запятую в выражении FROM.
 
-SELECT tablesname.columname(ID), tablesname2.columname2
-FROM tablesname, columname
-WHERE tablesnamecolumname(ID)
+SELECT customers.ID, customers.Name,
+orders.Name, orders.Amount
+FROM customers, orders
+WHERE customers.ID = orders.Customer_ID
+ORDER BY customers.ID;
+
+* каждая таблица содержит ст. ID и Name, так что для выбора правильного
+ID и Name использубтся полностью квалифицированные имена.
+
+14.2 Типы обьединений
+----------------------------
+Пользовательские Имена
+Можно сократить выражение объединения, с помощью установки таблице
+"прозвища"
+
+SELECT ct.ID, ct.Name, ord.Name, ord.Amount
+FROM customers AS ct, orders AS ord
+WHERE ct.ID=ord.Customer_ID
+ORDER BY ct.ID;
+
+Типы обьединений
+-INNER JOIN (внутреннее обьединение) экв. JOIN. Оно возвращает строки, 
+если они совпадабт в таблицах. (Возвр. только совпадающие записи).
+-LEFT JOIN (возвращает все строки из левой таблицы, даже есл. нет соотв.
+в правой таблице).
+-RIGHT JOIN (возвращает все строки из правой таблицы, даже если нет 
+соответсвий в левой таблице)
+
+Базовый синтаксис:
+
++INNER
+SELECT column_name(s)
+FROM table1 INNER JOIN table2
+ON table1.column_name=table2.column_name;
+(ON указывает на условие внутреннего объединения)
+
++LEFT
+SELECT table1.column1, table2.column2
+FROM table1 LEFT OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+(если совпадение ненайдено для конкретной строки, то будет возвращено 
+значение NULL)
+
++RIGHT
+SELECT table1.column1, table2.column2
+FROM table1 RIGHT OUTER JOIN table2
+ON table.cilumn_name = table2.column_name;
+(OUTER является опциональным и может быть опущено)
+
+14.3 UNION
+----------------------------
+- комбинирует несколько наборов данных в один набор, и убирает
+любые существующие дубликаты
+UNION ALL (быстрее чем UNION)
+- комбинирует несколько наборов данных в один набор, но не убирает 
+дублирующиеся строки
+
+Оператор UNION используется для комбинирования наборов результатов
+двух и более выражений SELECT. Все выражения SELECT внутри UNION
+должны иметь одинаковое количество столбцов, столбцы в свою очередь
+должны иметь одинаковые типы данных и идти в одинаковом порядке.
+
+SELECT column_name FROM table1
+UNION
+SELECT column_name FROM table2;
+
+(Если столбцы не совпадают в точности по все запросам, то можно использовать
+значение NULL:
+
+SELECT FirstName, LastName, Company 
+FROM businessContacts
+UNION
+SELECT FirstName, LastName, NULL FROM
+otherContacts;
+
+
+
 
 

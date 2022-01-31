@@ -30,6 +30,9 @@ Pass: 123
  6. Вывести всех работников с названиями их должности.                                   6|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id;
+ (Работники должность которым не присвоена)                                              *|   select  * from roles
+                                                                                              right outer join employees 
+                                                                                              on roles.id = employees.id;                                                
  7. Вывести имена и должность только Java разработчиков.
  8. Вывести имена и должность только Python разработчиков.
  9. Вывести имена и должность всех QA инженеров.

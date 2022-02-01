@@ -58,8 +58,18 @@ Pass: 123
                                                                                               on employees.id = roles.id
                                                                                               inner join salary on roles.id = salary.id
                                                                                               where role_name like '%unior%';
- 13. Вывести имена и зарплаты Middle специалистов                                       13|   
- 14. Вывести имена и зарплаты Senior специалистов
+ 13. Вывести имена и зарплаты Middle специалистов                                       13|   select employees.employee_name, roles.role_name, salary.monthly_salary
+                                                                                              from employees
+                                                                                              inner join roles
+                                                                                              on employees.id = roles.id
+                                                                                              inner join salary on roles.id = salary.id
+                                                                                              where role_name like '%iddle%';
+ 14. Вывести имена и зарплаты Senior специалистов                                       14|   select employees.employee_name, roles.role_name, salary.monthly_salary
+                                                                                              from employees
+                                                                                              inner join roles
+                                                                                              on employees.id = roles.id
+                                                                                              inner join salary on roles.id = salary.id
+                                                                                              where role_name like '%enio%';
  15. Вывести зарплаты Java разработчиков
  16. Вывести зарплаты Python разработчиков
  17. Вывести имена и зарплаты Junior Python разработчиков

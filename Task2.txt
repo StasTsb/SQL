@@ -32,23 +32,23 @@ Pass: 123
  (Работники должность которым не присвоена)                                              *|   select  * from roles
                                                                                               right outer join employees 
                                                                                               on roles.id = employees.id;                                                
- 7. Вывести имена и должность только Java разработчиков.                         -       7|   select  * from roles
+ 7. Вывести имена и должность только Java разработчиков.                                 7|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
                                                                                               where role_name like '%Java%';
- 8. Вывести имена и должность только Python разработчиков.                       -       8|   select  * from roles
+ 8. Вывести имена и должность только Python разработчиков.                               8|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
                                                                                               where role_name like '%Python%';
- 9. Вывести имена и должность всех QA инженеров.                                 -       9|   select  * from roles
+ 9. Вывести имена и должность всех QA инженеров.                                         9|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
                                                                                               where role_name like '%QA%';
- 10. Вывести имена и должность ручных QA инженеров.                              -      10|   select  * from roles
+ 10. Вывести имена и должность ручных QA инженеров.                                     10|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
      !!!!(Manual\manual) =  %nual%                                                            where role_name like '%QA%' and role_name like'%nual%';
- 11. Вывести имена и должность автоматизаторов QA                                -      11|   select  * from roles
+ 11. Вывести имена и должность автоматизаторов QA                                       11|   select  * from roles
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
       !!!!(Automation\automation) =  %uto%                                                    where role_name like '%QA%' and role_name like'%uto%';
@@ -56,8 +56,9 @@ Pass: 123
                                                                                               from employees
                                                                                               inner join roles
                                                                                               on employees.id = roles.id
-                                                                                              inner join salary on roles.id = salary.id;
- 13. Вывести имена и зарплаты Middle специалистов
+                                                                                              inner join salary on roles.id = salary.id
+                                                                                              where role_name like '%unior%';
+ 13. Вывести имена и зарплаты Middle специалистов                                       13|   
  14. Вывести имена и зарплаты Senior специалистов
  15. Вывести зарплаты Java разработчиков
  16. Вывести зарплаты Python разработчиков

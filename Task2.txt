@@ -70,7 +70,11 @@ Pass: 123
                                                                                               on employees.id = roles.id
                                                                                               inner join salary on roles.id = salary.id
                                                                                               where role_name like '%enio%';
- 15. Вывести зарплаты Java разработчиков
+ 15. Вывести зарплаты Java разработчиков                                                15|   select roles.role_name, salary.id 
+                                                                                              from roles
+                                                                                              left outer join salary
+                                                                                              on roles.id = salary.id
+                                                                                              where role_name like '%ava%';
  16. Вывести зарплаты Python разработчиков
  17. Вывести имена и зарплаты Junior Python разработчиков
  18. Вывести имена и зарплаты Middle JS разработчиков

@@ -52,7 +52,11 @@ Pass: 123
                                                                                               inner join employees 
                                                                                               on roles.id = employees.id
       !!!!(Automation\automation) =  %uto%                                                    where role_name like '%QA%' and role_name like'%uto%';
- 12. Вывести имена и зарплаты Junior специалистов                                -      12|
+ 12. Вывести имена и зарплаты Junior специалистов                                       12|   select employees.employee_name, roles.role_name, salary.monthly_salary
+                                                                                              from employees
+                                                                                              inner join roles
+                                                                                              on employees.id = roles.id
+                                                                                              inner join salary on roles.id = salary.id;
  13. Вывести имена и зарплаты Middle специалистов
  14. Вывести имена и зарплаты Senior специалистов
  15. Вывести зарплаты Java разработчиков

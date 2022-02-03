@@ -80,8 +80,13 @@ Pass: 123
                                                                                               left outer join salary
                                                                                               on roles.id = salary.id
                                                                                               where role_name like'%yth%';
- 17. Вывести имена и зарплаты Junior Python разработчиков
- 18. Вывести имена и зарплаты Middle JS разработчиков
+ 17. Вывести имена и зарплаты Junior Python разработчиков                               17|   select employees.employee_name, roles.role_name, salary.monthly_salary
+                                                                                              from employees
+                                                                                              inner join roles
+                                                                                              on employees.id = roles.id
+                                                                                              left outer join salary on roles.id = salary.id
+                                                                                              where role_name like '%yth%' and role_name like'%unio%';
+ 18. Вывести имена и зарплаты Middle JS разработчиков                                   18|
  19. Вывести имена и зарплаты Senior Java разработчиков
  20. Вывести зарплаты Junior QA инженеров
  21. Вывести среднюю зарплату всех Junior специалистов

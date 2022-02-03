@@ -92,9 +92,18 @@ Pass: 123
                                                                                               on employees.id = roles.id
                                                                                               left outer join salary on roles.id = salary.id
                                                                                               where role_name like '%iddle%' and role_name like'%ava%';
- 19. Вывести имена и зарплаты Senior Java разработчиков
- 20. Вывести зарплаты Junior QA инженеров
- 21. Вывести среднюю зарплату всех Junior специалистов
+ 19. Вывести имена и зарплаты Senior Java разработчиков                                 19|   select employees.employee_name, roles.role_name, salary.monthly_salary
+                                                                                              from employees
+                                                                                              inner join roles
+                                                                                              on employees.id = roles.id
+                                                                                              left outer join salary on roles.id = salary.id
+                                                                                              where role_name like '%eni%' and role_name like'%ava%';
+ 20. Вывести зарплаты Junior QA инженеров                                               20|   select roles.role_name, salary.monthly_salary
+                                                                                              from salary
+                                                                                              inner join roles
+                                                                                              on salary.id = roles.id
+                                                                                              where role_name like '%uni%' and role_name like'%Q%' or role_name like '%q%';
+ 21. Вывести среднюю зарплату всех Junior специалистов                                  21|   
  22. Вывести сумму зарплат JS разработчиков
  23. Вывести минимальную ЗП QA инженеров
  24. Вывести максимальную ЗП QA инженеров

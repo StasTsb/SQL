@@ -108,11 +108,17 @@ Pass: 123
                                                                                               inner join roles
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%uni%'; 
- 22. Вывести сумму зарплат JS разработчиков                                             22|   select sum(monthly_salary)
+ 22. Вывести сумму зарплат JS разработчиков (общую)                                     22|   select sum(monthly_salary)
                                                                                               from salary
                                                                                               inner join roles
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%Ja%' or role_name like '%ja%';
+ *(общую по должностям)                                                                  *|   select sum(monthly_salary), roles.role_name 
+                                                                                              from salary
+                                                                                              inner join roles
+                                                                                              on salary.id = roles.id
+                                                                                              where role_name like '%Ja%' or role_name like '%ja%'
+                                                                                              group by role_name;
  23. Вывести минимальную ЗП QA инженеров                                                23|
  24. Вывести максимальную ЗП QA инженеров                                               24|
  25. Вывести количество QA инженеров                                                    25|

@@ -103,12 +103,11 @@ Pass: 123
                                                                                               inner join roles
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%uni%' and role_name like'%Q%' or role_name like '%q%';
- 21. Вывести среднюю зарплату всех Junior специалистов                                  21|   select roles.role_name, salary.monthly_salary
+ 21. Вывести среднюю зарплату всех Junior специалистов                                  21|   select avg(monthly_salary)
                                                                                               from salary 
                                                                                               inner join roles
                                                                                               on salary.id = roles.id
-                                                                                              where monthly_salary = (SELECT AVG(monthly_salary) from salary) 
-                                                                                              and role_name like '%uni%'; 
+                                                                                              where role_name like '%uni%'; 
  22. Вывести сумму зарплат JS разработчиков                                             22|   select sum(monthly_salary)
                                                                                               from salary
                                                                                               inner join roles

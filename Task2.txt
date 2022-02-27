@@ -113,7 +113,7 @@ Pass: 123
                                                                                               inner join roles
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%Ja%' or role_name like '%ja%';
- *(общую по должностям)                                                                  *|   select sum(monthly_salary), roles.role_name 
+ *(общую по должностям, с названием должностей)                                          *|   select sum(monthly_salary), roles.role_name 
                                                                                               from salary
                                                                                               inner join roles
                                                                                               on salary.id = roles.id

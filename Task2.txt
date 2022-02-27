@@ -119,7 +119,7 @@ Pass: 123
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%Ja%' or role_name like '%ja%'
                                                                                               group by role_name
-                                                                                              order by sum;
+                                                                                              order by sum desc;
  23. Вывести минимальную ЗП QA инженеров                                                23|
  24. Вывести максимальную ЗП QA инженеров                                               24|
  25. Вывести количество QA инженеров                                                    25|

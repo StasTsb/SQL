@@ -120,7 +120,12 @@ Pass: 123
                                                                                               where role_name like '%Ja%' or role_name like '%ja%'
                                                                                               group by role_name
                                                                                               order by sum desc;
- 23. Вывести минимальную ЗП QA инженеров                                                23|
+ 23. Вывести минимальную ЗП QA инженеров                                                23|   select min(monthly_salary), roles.role_name 
+                                                                                              from salary
+                                                                                              inner join roles
+                                                                                              on salary.id = roles.id
+                                                                                              where role_name like '%Q%' or role_name like '%q%'
+                                                                                              group by role_name;
  24. Вывести максимальную ЗП QA инженеров                                               24|
  25. Вывести количество QA инженеров                                                    25|
  26. Вывести количество Middle специалистов                                             26|

@@ -130,7 +130,7 @@ Pass: 123
  25. Вывести количество QA инженеров                                                    25|   select count(role_name)
                                                                                               from roles
                                                                                               where role_name like '%Q%' or role_name like '%q%';
- 26. Вывести количество Middle специалистов                                             26|
+ 26. Вывести количество Middle специалистов                                             26|   ++++++++++++++++
  27. Вывести количество разработчиков                                                   27|
  28. Вывести фонд (сумму) зарплаты разработчиков                                        28|   select sum(monthly_salary)
                                                                                               from salary
@@ -150,7 +150,7 @@ Pass: 123
                                                                                               left outer join salary on roles.id = salary.id
                                                                                               where monthly_salary >= 1700 and salary.monthly_salary <= 2300
                                                                                               order by monthly_salary desc;                
- 31. Вывести имена, должности и ЗП всех специалистов по возрастанию                     31|                 
+ 31. Вывести имена, должности и ЗП всех специалистов по возрастанию                     31|   +++++++++++++              
      у специалистов у которых ЗП меньше 2300
  32. Вывести имена, должности и ЗП всех специалистов по возрастанию                     32|   select employees.employee_name, roles.role_name, salary.monthly_salary
      у специалистов у которых ЗП равна 1100, 1500, 2000                                       from employees

@@ -133,7 +133,9 @@ Pass: 123
  26. Вывести количество Middle специалистов                                             26|   select count(role_name)
                                                                                               from roles
                                                                                               where role_name like '%idd%';
- 27. Вывести количество разработчиков                                                   27|
+ 27. Вывести количество разработчиков                                                   27|   select count(role_name)
+                                                                                              from roles
+                                                                                              where role_name like '%evel%';
  28. Вывести фонд (сумму) зарплаты разработчиков                                        28|   select sum(monthly_salary)
                                                                                               from salary
                                                                                               inner join roles

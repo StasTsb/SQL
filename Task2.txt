@@ -126,7 +126,12 @@ Pass: 123
                                                                                               on salary.id = roles.id
                                                                                               where role_name like '%Q%' or role_name like '%q%'
                                                                                               group by role_name;
- 24. Вывести максимальную ЗП QA инженеров                                               24|
+ 24. Вывести максимальную ЗП QA инженеров                                               24|   select max(monthly_salary), roles.role_name 
+                                                                                              from salary
+                                                                                              inner join roles
+                                                                                              on salary.id = roles.id
+                                                                                              where role_name like '%Q%' or role_name like '%q%'
+                                                                                              group by role_name; 
  25. Вывести количество QA инженеров                                                    25|   select count(role_name)
                                                                                               from roles
                                                                                               where role_name like '%Q%' or role_name like '%q%';
